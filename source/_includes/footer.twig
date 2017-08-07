@@ -1,0 +1,77 @@
+<footer class="bg-black ph3 pv4 white">
+
+  <div class="mw7 center pt3">
+
+    <div class="measure-narrow center mb4">
+
+      <img src="/assets/img/logo.svg" alt="Kaldi logo" class="db w4 center mb4 br0">
+      <p class="f3 lh-title light-gray b tc mb2">Newsletter subscribe</p>
+      <p>Get awesome news from us in your inbox every two weeks. Be the first to learn about new products.</p>
+
+      {% include "newsletter_form" %}
+
+    </div>
+
+    <div class="flex-ns justify-between">
+
+      <div>
+        <h3 class="f4 b lh-title mb1 primary">Kaldi</h3>
+        <ul class="mb3">
+          <li><a href="/" class="link">Home</a></li>
+          <li><a href="/products" class="link">Our products</a></li>
+          <li><a href="/values" class="link">About</a></li>
+          <li><a href="/blog" class="link">Blog</a></li>
+          <li><a href="/contact" class="link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="f4 b lh-title mb1 primary">Find out more</h3>
+        <ul class="mb3">
+          <li><a href="/blog/jamaica-blue/" class="link">Latest offers</a></li>
+          <li><a href="/contact" class="link">Schedule and appointment</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="f4 b lh-title mb2 primary">Social media</h3>
+        <ul class="mhn2">
+          {% set vars = {
+            'link':  '#',
+            'svg': 'facebook'
+          }%}
+          {% include 'social_icon.twig' with vars %}
+
+          {% set vars = {
+            'link':  '#',
+            'svg': 'twitter'
+          }%}
+          {% include 'social_icon.twig' with vars %}
+
+          {% set vars = {
+            'link':  '#',
+            'svg': 'instagram'
+          }%}
+          {% include 'social_icon.twig' with vars %}
+
+          {% set vars = {
+            'link':  '#',
+            'svg': 'vimeo'
+          }%}
+          {% include 'social_icon.twig' with vars %}
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</footer>
+
+{% include "svg.twig" %}
+
+<!-- <script src="/assets/js/app.js"></script> -->
+
+</body>
+
+</html>

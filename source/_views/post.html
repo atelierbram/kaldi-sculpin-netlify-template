@@ -1,0 +1,34 @@
+{% extends "default" %}
+
+{% block head_meta %}
+{% endblock %}
+
+{% block content_wrapper %}
+    <article class="mw6 center ph3 pv4" id="postArticle">
+    <h1 class="f2 lh-title b mb3">{{ page.title }}</h1>
+    <div class="flex justify-between grey-3">
+      <p><time datetime="{{ page.date_machine|replace({'_':'-'}) }}">{{ page.date_human }}</time></p>
+      <p>Read in {{ page.reading_time }} minutes</p>
+    </div>
+    <div class="cms mw6">
+      <p>{{ page.description }}</p>
+
+      {% if page.image %}<img src="{{ page.image }}" alt="{{ page.title }}" />{% endif %}
+
+       {{ page.blocks.content|raw }}
+
+    </div>
+  </div>
+
+    {% if page.previous_post or page.next_post %}
+      <nav class="prevnext">
+      {% if page.previous_post %}
+      <h5 class="prevnext_left"><a href="{{ site.url }}{{ page.previous_post.url }}" rel="prev"><span class="prevnext_left_title">← {{ page.previous_post.title }}</span></a></h5>
+      {% endif %}
+      {% if page.next_post %}
+        <h5 class="prevnext_right"><a href="{{ site.url }}{{ page.next_post.url }}" rel="next"><span class="prevnext_right_title">{{ page.next_post.title }} →</span></a></h5>
+      {% endif %}
+      </nav>
+    {% endif %}
+    </article>
+{% endblock %}

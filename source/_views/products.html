@@ -1,0 +1,32 @@
+{% extends "default" %}
+
+{% block head_meta %}
+{% endblock %}
+
+{% block content_wrapper %}
+
+{% set jumbotronVars = { 'image_jumboUrl':  '/assets/img/products/jumbotron.jpg' , 'title': 'Our Coffee' } %}
+{% include 'jumbotron.twig' with jumbotronVars %}
+
+
+{% include '4_up.twig' %}
+
+<div class="mw7 center">
+  <div class="mw6 ph3 mb3">
+    <h3 class="f3 b lh-title mb2">{{ page.main.heading }}</h3>
+    <p>{{ page.main.description }}</p>
+  </div>
+</div>
+
+{% include "image_grid.twig" %}
+
+<div class="pb4">
+ {% include 'blockquote.twig' %}
+</div>
+
+<img src="{{ page.full_image }}" alt="" class="db w-100">
+
+{% include 'table.twig' %}
+
+
+{% endblock %}

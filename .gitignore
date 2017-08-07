@@ -1,0 +1,49 @@
+.DS_Store
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.rar
+*.ai
+
+# Logs
+npm-debug.log
+node_modules
+pids
+logs
+*.log
+
+#sass cache files
+.sass-cache
+
+release
+/tmp/
+/temp/
+dist/
+sitemap-ignore.json
+
+# Docs, etc in underscore directory
+_/
+publish.sh
+s3-publish.sh
+s3.conf.dist
+
+# ignore page folder for pagination for now
+/docs/page/
+
+# copied assets for local development
+/assets
+
+# Sculpin
+/app/cache/*
+/app/config/sculpin_kernel_*.yml
+/app/config/sculpin_site_*.yml
+/app/logs/*
+/vendor/
+/source/components/
+/output_*

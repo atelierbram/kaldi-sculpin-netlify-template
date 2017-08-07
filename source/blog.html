@@ -1,0 +1,24 @@
+---
+layout: default
+title: Blog
+type: values
+page_type: page
+slug: values
+generator: pagination
+use:
+  - posts
+
+---
+
+{% block head_meta %}
+{% endblock %}
+
+{% block content %}
+
+{% set jumbotronVars = { 'image_jumboUrl':  '/assets/img/blog-index.jpg' , 'title': 'Latest stories' } %}
+{% include 'jumbotron.twig' with jumbotronVars %}
+
+
+{% include 'blog' %}
+
+{% endblock %}

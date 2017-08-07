@@ -1,0 +1,35 @@
+{
+  "name": "sculpin/brochure-template",
+  "description": "A Template for a Sculpin Based Blog",
+  "type": "sculpin-skeleton",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Atelierbram",
+      "email": "info@atelierbramdehaan.nl",
+      "homepage": "http://atelierbramdehaan.nl"
+    },
+    {
+      "name": "Bram de Haan",
+      "email": "info@atelierbramdehaan.nl",
+      "homepage": "http://atelierbramdehaan.nl"
+    }
+  ],
+  "require": {
+    "sculpin/sculpin": "^2.1@dev",
+    "dflydev/embedded-composer": "^1.0@dev",
+    "kriswallsmith/assetic": "1.1.2"
+  },
+  "config": {
+    "component-dir": "source/components",
+    "components": [ ]
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "ComponentManager\\ComponentManager::postComposerInstall"
+    ]
+  },
+  "autoload": {
+    "classmap": ["component-manager.php"]
+  }
+}

@@ -1,0 +1,21 @@
+# The contents of this file are parsed and made available as
+# via `site.*`. So for example, {{ site.title }} can be used
+# in a template to get the contents of the `title` key.
+title: Kaldi
+subtitle: Template for a Small Business Website build with Sculpin - deployed with Netlify
+author: Bram de Haan <info@atelierbramdehaan.nl>
+org: Atelier Bram de Haan
+description: Template for a Small Business Website build with Sculpin - deployed with Netlify
+keywords: Webdesign, Frontend, Design, 2D-Design, Static Site Generator, Sculpin, PHP, Netlify
+url: //localhost:8000
+slug: //localhost:8000
+slug_posts: //localhost:8000/blog
+url_license: //atelierbram.mit-license.org/
+url_homepage: //atelierbram.github.io/blog/
+url_codepen-blog: //codepen.io/atelierbram/blog
+url_google-plus: //plus.google.com/+BramdeHaan/posts
+url_atelier: //atelierbramdehaan.nl/
+url_repository: //github.com/atelierbram/kaldi-sculpin-netlify-template
+url_repository-readme-link: //github.com/atelierbram/kaldi-sculpin-netlify-template#README.md
+year_old: 2014
+year_new: 2017

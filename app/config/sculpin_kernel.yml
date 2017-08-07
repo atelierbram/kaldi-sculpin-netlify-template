@@ -1,0 +1,5 @@
+sculpin:
+  output_dir: dist
+sculpin_content_types:
+  posts:
+    permalink: blog/:basename/

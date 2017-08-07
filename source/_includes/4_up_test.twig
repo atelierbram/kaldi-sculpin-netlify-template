@@ -1,0 +1,32 @@
+<div class="bg-off-white pv4">
+  <div class="ph3 mw7 center">
+    <h2 class="f2 b lh-title mb2">{{ page.heading }}</h2>
+    <p class="mb4 mw6">{{ page.description }}</p>
+
+{#  https://www.slideshare.net/javier.eguiluz/twig-tips-and-tricks #}
+{#  https://learn.getgrav.org/themes/twig-filters-functions #}
+    <div class="flex-ns flex-wrap mhn2-ns mb3">
+
+    {# TODO: create for loop, something like: {% for blurbs in page.intro.blurbs %} #}
+
+      {# {% for img in page.up.img|slice(0,1) %} #}
+      {# {% for img in page.up|batch(2,'')  %} #}
+      {# {% for img in page.up.img|slice(0,1) %} #}
+      {# {% for text in page.up.text|slice(0,4) %} #}
+      {% for img in page.up.img %}
+      {# {% for text in page.up.text %} #}
+      {# {% for text in page.up.text %} #}
+      <div class="ph2-ns w-50-ns mb4">
+      {# {% for img in page.up.img %} #}
+      {# {% for img in page.up.img %} #}
+        <img src="{{ img }}" alt="" class="center db mb3" style="width: 240px">
+      {# {% for text in page.up.text %} #}
+      {# {% for text in page.up.text|slice(0,1) %} #}
+        <p>{{ text }}</p>
+      {# {% endfor %} #}
+      {# {% endfor %} #}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
