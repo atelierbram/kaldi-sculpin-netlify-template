@@ -21,12 +21,12 @@
   </div>
 
     {% if page.previous_post or page.next_post %}
-      <nav class="prevnext">
+      <nav class="prevnext mt5 mb4">
       {% if page.previous_post %}
-      <h5 class="prevnext_left"><a href="{{ site.url }}{{ page.previous_post.url }}" rel="prev"><span class="prevnext_left_title">← {{ page.previous_post.title }}</span></a></h5>
+      <h5 class="prevnext_left"><a href="{{ site.url }}{{ page.previous_post.url }}" rel="prev" class="no-underline"><span class="prevnext_left_title">← {{ page.previous_post.title }}</span></a></h5>
       {% endif %}
       {% if page.next_post %}
-        <h5 class="prevnext_right"><a href="{{ site.url }}{{ page.next_post.url }}" rel="next"><span class="prevnext_right_title">{{ page.next_post.title }} →</span></a></h5>
+        <h5 class="prevnext_right tr"><a href="{{ site.url }}{{ page.next_post.url }}" rel="next" class="no-underline"><span class="prevnext_right_title">{{ page.next_post.title }} →</span></a></h5>
       {% endif %}
       </nav>
     {% endif %}

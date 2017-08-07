@@ -1,0 +1,31 @@
+::selection {
+  background-color: $highlight;
+}
+
+// Used in the navbar
+.prevnext a,
+.divider-grey {
+  box-shadow: inset 0 -4px 0 $grey-1;
+  // Link hover states
+  & a {
+    transition: $hover-transition;
+  }
+  & ul a:hover, & ul a:focus {
+    box-shadow: inset 0 -4px 0 $primary;
+  }
+}
+
+.nav_current a {
+  pointer-events: none;
+  cursor: default;
+  color: $primary;
+  box-shadow: inset 0 -4px 0 $primary;
+}
+
+.prevnext a {
+  box-shadow: inset 0 -4px 0 $grey-1;
+  transition: $hover-transition;
+  &:hover, &a:focus {
+    box-shadow: inset 0 -4px 0 $primary;
+  }
+}

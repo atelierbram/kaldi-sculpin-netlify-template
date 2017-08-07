@@ -1,0 +1,101 @@
+.cms {
+
+  /* Headings */
+  & h1, & h2, & h3, & h4, & h5, & h6 {
+    font-weight: $bold-font-weight;
+    line-height: 1.25;
+    margin-bottom: $spacing-small;
+  }
+
+  & h1 {
+    font-size: 2.25rem;
+  }
+
+  & h2 {
+    font-size: 1.5rem;
+  }
+
+  & h3 {
+    font-size: 1.25rem;
+  }
+
+  & h4 {
+    font-size: 1rem;
+  }
+
+  & h5 {
+    font-size: .875rem;
+  }
+
+  /* Images */
+  & img {
+    display: block;
+    margin-bottom: $spacing-medium;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  /* Links */
+  & a {
+    color: $primary;
+    transition: $hover-transition;
+    &:hover {
+      background-color: $highlight;
+      color: $black;
+    }
+  }
+
+  /* Lists */
+  & ul, & ol, & li {
+    position: relative;
+  }
+
+  & ul, & ol {
+    margin-bottom: $spacing-medium;
+  }
+
+  & ul ul, & ol ol {
+    padding-left: $spacing-small;
+  }
+
+  & ul {
+    margin-left: 1.33rem;
+    & >li:before {
+      content: '✱';
+      left: -1.33rem;
+      position: absolute;
+      color: $primary;
+    }
+  }
+
+  & ol {
+    list-style: none;
+    margin-left: $spacing-medium;
+    counter-reset: a 0;
+    & >li:before {
+      font-weight: 800;
+      left: -$spacing-medium;
+      position: absolute;
+      height: 100%;
+      content: counter(a);
+      counter-increment: a;
+      color: $primary;
+    }
+  }
+
+  /* Blockquotes */
+  & blockquote {
+    background-color: $grey-1;
+    display: block;
+    border-radius: $border-radius;
+    padding: $spacing-medium;
+    color: $primary;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: $spacing-medium;
+    & p {
+      margin: 0;
+    }
+  }
+}

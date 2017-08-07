@@ -1,0 +1,80 @@
+/* Text colors */
+
+.primary {
+  color: $primary;
+}
+
+.highlight {
+  color: $highlight;
+}
+
+.white {
+  color: $white;
+}
+
+.off-white {
+  color: $off-white;
+}
+
+.grey-1 {
+  color: $grey-1;
+}
+
+.grey-2 {
+  color: $grey-2;
+}
+
+.grey-3 {
+  color: $grey-3;
+}
+
+.grey-4 {
+  color: $grey-4;
+}
+
+.black {
+  color: $black;
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-highlight {
+  background-color: $highlight;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-off-white {
+  background-color: $off-white;
+}
+
+.bg-grey-1 {
+  background-color: $grey-1;
+}
+
+.bg-grey-2 {
+  background-color: $grey-2;
+}
+
+.bg-grey-3 {
+  background-color: $grey-4;
+}
+
+.bg-grey-4 {
+  background-color: $grey-4;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.bg-fix-primary {
+  padding: 0 $spacing-small;
+  & :first-child {
+    box-shadow: $spacing-small 0 0 $primary, -$spacing-small 0 0 $primary;
+  }
+}
