@@ -20,6 +20,10 @@ body {
   background-color: $off-white;
  }
 
+.wf-active body {
+  font-family: $webfont-family;
+}
+
 p {
   margin-bottom: $spacing-medium;
   max-width: 32rem;

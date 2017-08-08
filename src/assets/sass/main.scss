@@ -22,11 +22,6 @@
 //      - Debug children
 //
 //
-// External Library Includes
-// @import '../../../node_modules/tachyons-sass/scss/_reset';
-
-// @import '../../../node_modules/tachyons-sass/scss/_media-queries';
-// @import '../../../node_modules/tachyons-sass/scss/_colors';
 
 @import 'imports/_media-queries';
 @import 'imports/_variables';
@@ -83,10 +78,11 @@
 @import 'imports/_buttons';
 @import 'imports/_svg';
 @import 'imports/_cms';
+@import 'imports/_responsive-nav';
 
-// Debugging 
+// Debugging
 // @import 'imports/_debug-children';
 // @import 'imports/_debug-grid';
 
-// Uncomment out the line below to help debug layout issues 
+// Uncomment out the line below to help debug layout issues
 // @import './imports/_debug';

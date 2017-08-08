@@ -25,6 +25,7 @@ release
 /tmp/
 /temp/
 dist/
+build/
 sitemap-ignore.json
 
 # Docs, etc in underscore directory

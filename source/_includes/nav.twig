@@ -1,12 +1,12 @@
-<nav class="overflow-x-scroll overflow-x-visible-ns flex justify-between items-center center bg-white divider-grey relative">
+<nav class="overflow-x-scroll overflow-x-visible-ns flex justify-between items-center center bg-white divider-grey relative responsive-nav" id="js-responsive-nav">
 
   <!-- Logo -->
-  <a href="/" class="pa3 db mr4 h-100 w3 flex-none">
+  <a href="/" class="logo-wrap pa3 db mr4 h-100 w3 flex-none">
     <img src="/assets/img/logo.svg" alt="Kaldi logo" class="br0 db mb0 w-100"/>
   </a>
 
   <!-- Primary Nav -->
-  <ul class="flex b grey-3">
+  <ul class="responsive-nav_list flex b grey-3">
     <li {% if page.slug == "products" %} class="nav_current" {% endif %}><a href="/products" class="pa3 no-underline db">Products</a></li>
     <li {% if page.slug == "values" %} class="nav_current" {% endif %}><a href="/values" class="pa3 no-underline db">Values</a></li>
     <li {% if page.slug == "blog" %} class="nav_current" {% endif %}><a href="/blog" class="pa3 no-underline db">Blog</a></li>

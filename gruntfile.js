@@ -54,7 +54,8 @@ module.exports = function(grunt) {
       copy: {
         main: {
           files: {
-            'build/inc/feature-detect.js.inc': 'build/js/feature-detect.min.js',
+            'source/_includes/detect-webfont.js.inc': 'build/js/detect-webfont.min.js',
+            'source/_includes/responsive-nav.js.inc': 'build/js/responsive-nav.min.js',
           },
           flatten: true,
           filter: 'isFile',
@@ -65,8 +66,7 @@ module.exports = function(grunt) {
       concat: {
          dist: {
            files: {
-             // 'build/js/concat.js':  ['source/assets/js/navigation.js','source/assets/js/skip-link-focus-fix.js'],
-
+             'build/js/detect-webfont.js':  ['src/assets/js/feature-detect.js','src/assets/js/webfontloader.js'],
            }
          }
        },
@@ -81,9 +81,25 @@ module.exports = function(grunt) {
         },
         dist: {
           files: {
-            'build/js/feature-detect.min.js': 'src/assets/js/feature-detect.js',
+            'build/js/detect-webfont.min.js': 'build/js/detect-webfont.js',
+            'build/js/responsive-nav.min.js': 'src/assets/js/responsive-nav.js',
           }
         }
+      },
+
+      svgstore: {
+        options: {
+          // prefix : 'icon-', // This will prefix each ID
+          svg: { // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG
+            viewBox : '0 0 32 32',
+            xmlns: 'http://www.w3.org/2000/svg'
+          }
+        },
+        default: {
+          files: {
+            'source/_includes/svgstore.twig': ['src/assets/img/icons/*.svg'],
+          },
+        },
       },
 
       watch: {
@@ -101,7 +117,7 @@ module.exports = function(grunt) {
 
         js: {
             files: ['src/assets/js/**/*.js'],
-            tasks: ['concat','uglify'],
+            tasks: ['concat','uglify', 'copy'],
             options: {
               // spawn: false
             }
@@ -111,14 +127,14 @@ module.exports = function(grunt) {
 
   });
 
-    grunt.registerTask('build', ['clean','concat', 'uglify', 'sass', 'postcss:dist', 'cssmin', 'copy']);
+    grunt.registerTask('build', ['clean','concat','uglify','sass','postcss:dist','cssmin','copy','svgstore']);
     grunt.registerTask('clean', ['clean']);
     grunt.registerTask('scss', ['sass', 'postcss:dist', 'cssmin']);
     grunt.registerTask('js', ['uglify', 'concat']);
     grunt.registerTask('default', ['build', 'watch']);
     grunt.registerTask('dev', ['watch']);
 
-    grunt.loadNpmTasks('grunt-sass','grunt-contrib-cssmin','grunt-contrib-concat','grunt-contrib-uglify','grunt-contrib-watch','matchdep','grunt-postcss','grunt-contrib-copy','grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-sass','grunt-contrib-cssmin','grunt-contrib-concat','grunt-contrib-uglify','grunt-contrib-watch','matchdep','grunt-postcss','grunt-contrib-copy','grunt-contrib-clean','grunt-svgstore');
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   // Default tasks to be run.
