@@ -89,7 +89,6 @@ module.exports = function(grunt) {
 
       svgstore: {
         options: {
-          // prefix : 'icon-', // This will prefix each ID
           svg: { // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG
             viewBox : '0 0 32 32',
             xmlns: 'http://www.w3.org/2000/svg'
@@ -104,7 +103,8 @@ module.exports = function(grunt) {
 
       watch: {
         options: {
-          livereload: true,
+          // using the LiveReload browser-extension here, see https://github.com/gruntjs/grunt-contrib-watch#live-reloading
+          livereload: 35729,
         },
 
         scss: {
@@ -125,17 +125,25 @@ module.exports = function(grunt) {
 
       },
 
-  });
+      exec: {
+        sculp: {
+          command: 'sculpin generate --env=prod',
+          stdout: false,
+          stderr: false
+        }
+      },
 
-    grunt.registerTask('build', ['clean','concat','uglify','sass','postcss:dist','cssmin','copy','svgstore']);
-    grunt.registerTask('clean', ['clean']);
-    grunt.registerTask('scss', ['sass', 'postcss:dist', 'cssmin']);
-    grunt.registerTask('js', ['uglify', 'concat']);
-    grunt.registerTask('default', ['build', 'watch']);
-    grunt.registerTask('dev', ['watch']);
+    });
 
-    grunt.loadNpmTasks('grunt-sass','grunt-contrib-cssmin','grunt-contrib-concat','grunt-contrib-uglify','grunt-contrib-watch','matchdep','grunt-postcss','grunt-contrib-copy','grunt-contrib-clean','grunt-svgstore');
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  grunt.registerTask('build', ['clean','concat','uglify','sass','postcss:dist','cssmin','copy','svgstore','exec']);
+  grunt.registerTask('clean', ['clean']);
+  grunt.registerTask('scss', ['sass', 'postcss:dist', 'cssmin']);
+  grunt.registerTask('js', ['uglify', 'concat']);
+  grunt.registerTask('default', ['build', 'watch']);
+  grunt.registerTask('dev', ['watch']);
+
+  grunt.loadNpmTasks('grunt-sass','grunt-contrib-cssmin','grunt-contrib-concat','grunt-contrib-uglify','grunt-contrib-watch','matchdep','grunt-postcss','grunt-contrib-copy','grunt-contrib-clean','grunt-svgstore','grunt-exec');
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   // Default tasks to be run.
 };

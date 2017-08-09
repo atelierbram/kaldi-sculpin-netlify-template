@@ -1,1 +1,0 @@
-<nav class="nav" id="nav"><ul class="nav_list" id="navList">{% for post in page.pagination.items %}<li class="nav_list_item {% if post.slug == page.slug %}nav_list_item-current{% endif %}"><a href="{{ site.url }}/blog/{{ post.slug }}">{{ post.title }}</a></li>{% endfor %}</ul></nav>

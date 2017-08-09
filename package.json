@@ -4,7 +4,9 @@
   "description": "Sculpin based small business template with CMS integration for Netlify",
   "main": "gruntfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "sculpin generate --env=prod",
+    "sculpin": "vendor/bin/sculpin generate --watch --server",
+    "build": "grunt build"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-exec": "^3.0.0",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^2.0.0",
     "grunt-svgstore": "^1.0.0",
