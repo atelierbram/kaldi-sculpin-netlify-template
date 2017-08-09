@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title><![CDATA[Kaldi]]></title>
-    <link href="//localhost:8000/atom.xml" rel="self"/>
-    <link href="//localhost:8000/"/>
-    <updated>2017-08-09T22:00:29+02:00</updated>
-    <id>//localhost:8000/</id>
+    <link href="//kaldi-sculpin-template.netlify.com/atom.xml" rel="self"/>
+    <link href="//kaldi-sculpin-template.netlify.com/"/>
+    <updated>2017-08-09T22:11:10+02:00</updated>
+    <id>//kaldi-sculpin-template.netlify.com/</id>
             <author>
             <name><![CDATA[Bram de Haan &lt;info@atelierbramdehaan.nl&gt;]]></name>                    </author>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
             <title type="html"><![CDATA[A beginners’ guide to brewing with Chemex]]></title>
-            <link href="//localhost:8000/blog/brewing-chemex"/>
+            <link href="//kaldi-sculpin-template.netlify.com/blog/brewing-chemex"/>
             <updated>2017-01-04T01:00:00+01:00</updated>
-            <id>//localhost:8000/blog/brewing-chemex</id>
+            <id>//kaldi-sculpin-template.netlify.com/blog/brewing-chemex</id>
             <content type="html"><![CDATA[<p>This <a href="/wdwdw">week</a> we’ll <strong>take</strong> a look at all the steps required to make astonishing coffee with a Chemex at home. The Chemex Coffeemaker is a manual, pour-over style glass-container coffeemaker that Peter Schlumbohm invented in 1941, and which continues to be manufactured by the Chemex Corporation in Chicopee, Massachusetts&#42;.</p>
 
 <p>In 1958, designers at the <a href="https://www.spacefarm.digital">Illinois Institute of Technology</a> said that the Chemex Coffeemaker is <em>"one of the best-designed products of modern times"</em>, and so is included in the collection of the Museum of Modern Art in New York City.</p>
@@ -31,13 +31,15 @@
 <p>The most visually distinctive feature of the Chemex is the heatproof wooden collar around the neck, allowing it to be handled and poured when full of hot water. This is turned, then split in two to allow it to fit around the glass neck. The two pieces are held loosely in place by a tied leather thong. The pieces are not tied tightly and can still move slightly, retained by the shape of the conical glass.</p>
 
 <p>For a design piece that became popular post-war at a time of Modernism and precision manufacture, this juxtaposition of natural wood and the organic nature of a hand-tied knot with the laboratory nature of glassware was a distinctive feature of its appearance.</p>
+
+<p>This is a test. See if the admin works.</p>
 ]]></content>
         </entry>
             <entry>
             <title type="html"><![CDATA[Just in small batch of Jamaica Blue Mountain in store next week]]></title>
-            <link href="//localhost:8000/blog/jamaica-blue"/>
-            <updated>2017-01-03T01:00:00+01:00</updated>
-            <id>//localhost:8000/blog/jamaica-blue</id>
+            <link href="//kaldi-sculpin-template.netlify.com/blog/jamaica-blue"/>
+            <updated>2017-01-03T00:00:00+01:00</updated>
+            <id>//kaldi-sculpin-template.netlify.com/blog/jamaica-blue</id>
             <content type="html"><![CDATA[<p>We expect the shipment of a limited quantity of green beans next Monday. We’ll be offering the roasted beans from Tuesday, but quantities are limited, so be quick.</p>
 
 <p>Blue Mountain Peak is the highest mountain in Jamaica and one of the highest peaks in the Caribbean at 7,402 ft. It is the home of Blue Mountain coffee and their famous tours. It is located on the border of the Portland and Saint Thomas parishes of Jamaica.</p>
@@ -63,9 +65,9 @@
         </entry>
             <entry>
             <title type="html"><![CDATA[Making sense of the SCAA’s new Flavor Wheel]]></title>
-            <link href="//localhost:8000/blog/making-sense"/>
-            <updated>2016-12-17T01:00:00+01:00</updated>
-            <id>//localhost:8000/blog/making-sense</id>
+            <link href="//kaldi-sculpin-template.netlify.com/blog/making-sense"/>
+            <updated>2016-12-17T00:00:00+01:00</updated>
+            <id>//kaldi-sculpin-template.netlify.com/blog/making-sense</id>
             <content type="html"><![CDATA[<p>The SCAA updated the wheel to reflect the finer nuances needed to describe flavors more precisely. The new descriptions are more detailed and hence allow cuppers to distinguish between more flavors.</p>
 
 <p>While this is going to be a big change for professional coffee tasters, it means a lot to you as a consumer as well. We’ll explain how the wheel came to be, how pros use it and what the flavors actually mean.</p>
