@@ -135,7 +135,7 @@ module.exports = function(grunt) {
 
     });
 
-  grunt.registerTask('build', ['clean','concat','uglify','sass','postcss:dist','cssmin','copy','svgstore','exec']);
+  grunt.registerTask('build', ['clean','concat','uglify','sass','postcss:dist','cssmin','copy','svgstore']);
   grunt.registerTask('clean', ['clean']);
   grunt.registerTask('scss', ['sass', 'postcss:dist', 'cssmin']);
   grunt.registerTask('js', ['uglify', 'concat']);
