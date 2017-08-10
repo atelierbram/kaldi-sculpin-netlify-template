@@ -7,7 +7,7 @@
     <article class="mw6 center ph3 pv4" id="postArticle">
     <h1 class="f2 lh-title b mb3">{{ page.title }}</h1>
     <div class="flex justify-between grey-3">
-      <p><time datetime="{{ page.date_machine|replace({'_':'-'}) }}">{{ page.date_human }}</time></p>
+      <p><time datetime="{{ page.date|replace({'_':'-'}) }}">{{ page.date_human }}</time></p>
       <p>Read in {{ page.reading_time }} minutes</p>
     </div>
     <div class="cms mw6">
@@ -19,6 +19,22 @@
 
     </div>
   </div>
+
+      {% if page.categories %}
+      <p class="categories"><span class="primary">Categories:</span>
+      <ul class="mb1 inline-flex">
+        {% for category in page.categories %}
+        <li><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}" class="link pl1-ns">{{ category }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}</ul></p>
+    {% endif %}
+
+    {% if page.tags %}
+    <p class="tags"><span class="primary">Tags:</span>
+      <ul class="mb1 inline-flex">
+        {% for tag in page.tags %}
+        <li><a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}" class="link pl1-ns">{{ tag }}</a></li>{% if not loop.last %}, {% endif %}
+        {% endfor %}</ul></p>
+    {% endif %}
 
     {% if page.previous_post or page.next_post %}
       <nav class="prevnext mt5 mb4">

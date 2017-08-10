@@ -10,7 +10,7 @@
       {% for post in page.pagination.items %}
       <div class="ph1-ns w-50-ns flex">
         <a href="/blog/{{ post.slug }}" class="no-underline pa3 bg-grey-1 br1 mb2 db raise w-100"><h2 class="f3 b lh-title mb1 primary">{{ post.title }}</h2>
-          <p class="mid-gray lh-title mb2"><time datetime="{{ post.date_machine|replace({'_':'-'}) }}">{{ post.date_human }}</time></p>
+          <p class="mid-gray lh-title mb2"><time datetime="{{ post.date|replace({'_':'-'}) }}">{{ post.date_human }}</time></p>
           <p class="mb0">{% if post.description %}{{ post.description|raw }}
           {% else %}
           {{ post.blocks.content|raw|striptags|split(' ')|slice(0,30)|join(' ') }} &hellip;

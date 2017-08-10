@@ -1,12 +1,13 @@
 ---
 title: "Just in: small batch of Jamaica Blue Mountain in store next week"
-date: 2017-01-03
+date: 2017_01_03
+date_human: "Tue, Jan 3, 2017"
 page_type: post
 slug: jamaica-blue
 description: "We’re proud to announce that we’ll be offering a small batch of Jamaica Blue Mountain coffee beans in our store next week."
 image:
-date_human: "Tue, Jan 3, 2017"
-date_machine: "2017_01_03"
+tags: [flavor,growing]
+categories: [beans]
 reading_time: 2
 generator: pagination
 pagination:

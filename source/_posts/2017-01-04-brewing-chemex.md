@@ -1,12 +1,13 @@
 ---
 title: "A beginners’ guide to brewing with Chemex"
-date: 2017-01-04
+date: 2017_01_04
+date_human: 'Wed, Jan 4, 2017'
 page_type: post
 slug: brewing-chemex
 description: "Brewing with a Chemex probably seems like a complicated, time-consuming ordeal, but once you get used to the process, it becomes a soothing ritual that's worth the effort every time."
-image: /assets/img/blog/chemex.jpg
-date_human: 'Wed, Jan 4, 2017'
-date_machine: 2017-01-04
+image: /assets/img/blog/chemex.jpg 
+tags: [flavor,guide,chemex,brewing]
+categories: [resource]
 reading_time: 2
 generator: pagination
 pagination:

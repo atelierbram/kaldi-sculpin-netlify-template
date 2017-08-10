@@ -2,12 +2,30 @@
 layout: default
 title: Categories
 use:
-    - posts_categories
+- posts_categories
 ---
-<h2>Categories</h2>
 
-<div>
-{% for category,posts in data.posts_categories %}
-<a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a>
-{% endfor %}
+{% block head_meta %}
+{% endblock %}
+
+{% block content_wrapper %}
+
+<div class="mw7 center ph3 pt4">
+
+<div class="db mb3">
+  <div class="mw7 relative bg-fix-primary mb3">
+    <h2 class="f2 f1-l b di lh-title mb3 white mw6 bg-primary">Categories</h2>
+  </div>
+  <div class="mw7 relative bg-fix-primary">
+  </div>
 </div>
+
+
+<ul class="mb3">
+  {% for category,posts in data.posts_categories %}
+  <li><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}" class="link">{{ category }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+
+{% endblock %}

@@ -2,12 +2,29 @@
 layout: default
 title: Tags
 use:
-    - posts_tags
+- posts_tags
 ---
-<h2>Tags</h2>
 
-<div>
-{% for tag,posts in data.posts_tags %}
-<a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>
-{% endfor %}
+{% block head_meta %}
+{% endblock %}
+
+{% block content_wrapper %}
+
+<div class="mw7 center ph3 pt4 mb5">
+
+<div class="db mb3">
+  <div class="mw7 relative bg-fix-primary mb4">
+    <h2 class="f2 f1-l b di lh-title mb3 white mw6 bg-primary">Tags</h2>
+  </div>
+  <div class="mw7 relative bg-fix-primary">
+  </div>
 </div>
+
+  <ul class="mb3">
+    {% for tag,posts in data.posts_tags %}
+    <li><a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}" class="link">{{ tag }}</a>
+      {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}
