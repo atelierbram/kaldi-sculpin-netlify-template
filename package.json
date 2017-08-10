@@ -4,8 +4,8 @@
   "description": "Sculpin based small business template with CMS integration for Netlify",
   "main": "gruntfile.js",
   "scripts": {
-    "start": "sculpin generate --env=prod",
-    "sculpin": "vendor/bin/sculpin generate --watch --server",
+    "prod": "sculpin generate --env=prod",
+    "dev": "vendor/bin/sculpin generate --watch --server",
     "build": "grunt build"
   },
   "repository": {
