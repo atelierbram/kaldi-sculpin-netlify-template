@@ -30,7 +30,7 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image1, name: image1, widget: image},{label: Text1, name: text1, widget: text},{label: Image2, name: image2, widget: image},{label: Text2, name: text2, widget: text},{label: Image3, name: image3, widget: image},{label: Text3, name: text3, widget: text},{label: Image4, name: image4, widget: image},{label: Text4, name: text4, widget: text}]}]}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}]}
           - {label: Main, name: main, widget: object}
           - {label: Testimonials, name: testimonials, widget: object, fields: [{label: Quote1, name: quote1, widget: string}, {label: Author1, name: author1, widget: string},{label: Quote2, name: quote2, widget: string}, {label: Author2, name: author2, widget: string}]}
           - {label: Full_image, name: full_image, widget: image}
