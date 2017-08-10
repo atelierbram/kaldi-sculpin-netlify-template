@@ -6,7 +6,7 @@
   "scripts": {
     "start": "sculpin generate --env=prod",
     "sculpin": "vendor/bin/sculpin generate --watch --server",
-    "build": "composer install && grunt build && sculpin generate --env=prod"
+    "build": "php composer.phar install && grunt build && sculpin generate --env=prod"
   },
   "repository": {
     "type": "git",
