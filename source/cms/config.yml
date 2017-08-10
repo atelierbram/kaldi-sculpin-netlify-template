@@ -42,5 +42,13 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Title, name: title, widget: string}
           - {label: Type, name: type, widget: hidden, default: contact}
           - {label: Page, name: page, widget: hidden, default: "/contact.html"}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Text1, name: text1, widget: text}]}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Text1, name: text, widget: text}]}
           - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Text, name: text, widget: text},{label: Location, name: location, widget: object, fields: [{label: Heading, name: subheading, widget: string}, {label: Address, name: address, widget: string}]}, {label: Opening Hours, name: opening_hours, widget: object, fields: [{label: Heading, name: subheading, widget: string}, {label: Info, name: info, widget: string}]}]}
+      - file: "source/values.md"
+        label: "About Page"
+        name: "values"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Type, name: type, widget: hidden, default: values}
+          - {label: Page, name: page, widget: hidden, default: "/values.html"}
+          - {label: Main, name: main, widget: object, fields: [{label: Heading1, name: heading1, widget: string}, {label: Text1, name: text1, widget: text},{label: Image1, name: image1, widget: image}, {label: Heading2, name: heading2, widget: string}, {label: Text2, name: text2, widget: text},{label: Image2, name: image2, widget: image}{label: Heading3, name: heading3, widget: string}, {label: Text3, name: text3, widget: text},{label: Image3, name: image3, widget: image}{label: Heading4, name: heading4, widget: string}, {label: Text4, name: text4, widget: text},{label: Image4, name: image4, widget: image}{label: Heading5, name: heading5, widget: string}, {label: Text5, name: text5, widget: text},{label: Image5, name: image5, widget: image}]}

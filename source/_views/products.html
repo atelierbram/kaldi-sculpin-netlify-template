@@ -5,7 +5,7 @@
 
 {% block content_wrapper %}
 
-{% set jumbotronVars = { 'image_jumboUrl':  '/assets/img/products/jumbotron.jpg' , 'title': 'Our Coffee' } %}
+{% set jumbotronVars = { 'image_jumboUrl':  '/assets/img/products/jumbotron.jpg' , 'title': '{{ page.title }}' } %}
 {% include 'jumbotron.twig' with jumbotronVars %}
 
 
