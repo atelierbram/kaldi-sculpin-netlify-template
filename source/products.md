@@ -39,27 +39,27 @@ pricing:
   heading: Monthly subscriptions
   description: We make it easy to make great coffee a part of your life. Choose one of our monthly subscription plans to receive great coffee at your doorstep each month. Contact us about more details and payment info.
   plans:
+    plan1: Small
+    price1: '50'
     description1: Perfect for the drinker who likes to enjoy 1-2 cups per day.
     items1:
       item_a: 3 lbs of coffee per month
       item_b: Green or roasted beans
       item_c: One or two varieties of beans
-    plan1: Small
-    price1: '50'
+    plan2: Big
+    price2: '80'
     description2: Great for avid drinkers, java-nsoving couples and bigger crowds
     items2:
       item_a: 6 lbs of coffee per month
       item_b: Green or roasted beans
       item_c: Up to 4 different varieties of beans
-    plan2: Big
-    price2: '80'
+    plan3: Custom
+    price3: '?'
     description3: Want a few tiny batches from different varieties? Try our custom plan
     items3:
       item_a: Whatever you need
       item_b: Green or roasted beans
       item_c: Unlimited varieties
-    plan3: Custom
-    price3: '?'
 
 ---
 
