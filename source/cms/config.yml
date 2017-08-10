@@ -30,6 +30,4 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote1, name: quote1, widget: string}, {label: Author1, name: author1, widget: string},{label: Quote2, name: quote2, widget: string}, {label: Author2, name: author2, widget: string}]}
           - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price1, name: price1, widget: string}, {label: Description1, name: description1, widget: string}, {label: Items1, name: items1, widget: list},{label: Price2, name: price2, widget: string}, {label: Description2, name: description2, widget: string}, {label: Items2, name: items2, widget: list},{label: Price3, name: price3, widget: string}, {label: Description3, name: description3, widget: string}, {label: Items3, name: items3, widget: list}]}]}
