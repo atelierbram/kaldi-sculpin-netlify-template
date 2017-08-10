@@ -23,3 +23,10 @@ collections: # A list of collections the CMS should be able to edit
       - file: "source/products.md"
         label: "Products Page"
         name: "products"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Type, name: type, widget: hidden, default: products}
+          - {label: Page, name: page, widget: hidden, default: "/products.html"}
+          - {label: Image, name: image, widget: image}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
