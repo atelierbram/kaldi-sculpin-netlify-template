@@ -126,11 +126,32 @@ module.exports = function(grunt) {
       },
 
       exec: {
-        sculp: {
-          command: 'sculpin generate --env=prod',
+        remove_ds_store1: {
+          command: 'rm -f *.DS_Store',
+          stdout: false,
+          stderr: false
+        },
+        remove_ds_store2: {
+          command: 'rm -f source/.DS_Store',
+          stdout: false,
+          stderr: false
+        },
+        remove_ds_store3: {
+          command: 'rm -f source/_posts/.DS_Store',
+          stdout: false,
+          stderr: false
+        },
+        remove_ds_store4: {
+          command: 'rm -f source/_includes/.DS_Store',
+          stdout: false,
+          stderr: false
+        },
+        remove_ds_store5: {
+          command: 'rm -f source/_views/.DS_Store',
           stdout: false,
           stderr: false
         }
+
       },
 
     });

@@ -17,3 +17,21 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "source/products.md"
+        label: "Products Page"
+        name: "products"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Type, name: type, widget: hidden, default: products}
+          - {label: Page, name: page, widget: hidden, default: "/products/index.html"}
+          - {label: Image, name: image, widget: image}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image1, name: image1, widget: image},{label: Text1, name: text1, widget: text},{label: Image2, name: image2, widget: image},{label: Text2, name: text2, widget: text},{label: Image3, name: image3, widget: image},{label: Text3, name: text3, widget: text},{label: Image4, name: image4, widget: image},{label: Text4, name: text4, widget: text}]}]}
+          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
+          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote1, name: quote1, widget: string}, {label: Author1, name: author1, widget: string},{label: Quote2, name: quote2, widget: string}, {label: Author2, name: author2, widget: string}]}
+          - {label: Full_image, name: full_image, widget: image}
+          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price1, name: price1, widget: string}, {label: Description1, name: description1, widget: string}, {label: Items1, name: items1, widget: list},{label: Price2, name: price2, widget: string}, {label: Description2, name: description2, widget: string}, {label: Items2, name: items2, widget: list},{label: Price3, name: price3, widget: string}, {label: Description3, name: description3, widget: string}, {label: Items3, name: items3, widget: list}]}]}

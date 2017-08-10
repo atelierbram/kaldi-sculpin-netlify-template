@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>//localhost:8000</loc>
+    <loc>//kaldi-sculpin-template.netlify.com</loc>
     <lastmod>2017-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
     <url>
-    <loc>//localhost:8000/blog/brewing-chemex/</loc>
+    <loc>//kaldi-sculpin-template.netlify.com/blog/brewing-chemex</loc>
     <lastmod>2017-01-04T01:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>//localhost:8000/blog/jamaica-blue/</loc>
-    <lastmod>2017-01-03T01:00:00+01:00</lastmod>
+    <loc>//kaldi-sculpin-template.netlify.com/blog/jamaica-blue</loc>
+    <lastmod>2017-01-03T00:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>//localhost:8000/blog/making-sense/</loc>
-    <lastmod>2016-12-17T01:00:00+01:00</lastmod>
+    <loc>//kaldi-sculpin-template.netlify.com/blog/making-sense</loc>
+    <lastmod>2016-12-17T00:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
