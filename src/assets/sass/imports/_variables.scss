@@ -9,8 +9,8 @@ $grey-4: rgba(66, 64, 64, 1);
 $black: rgba(43, 37, 35, 1);
 
 // Typography */
-$font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
-$webfont-family: Nunito Sans, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+$font-family: AvenirNext-Regular, 'avenir next', avenir, -apple-system, BlinkMacSystemFont, 'helvetica neue',  helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+$webfont-family: Nunito Sans, AvenirNext-Regular, 'avenir next', avenir, -apple-system, BlinkMacSystemFont, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
 $line-height: 1.5;
 
 $font-size: 18px;
