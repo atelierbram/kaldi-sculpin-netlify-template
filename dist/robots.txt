@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /blog/tags/
-Disallow: /blog/categories/
-
-Sitemap: //kaldi-sculpin-template.netlify.com/sitemap.xml

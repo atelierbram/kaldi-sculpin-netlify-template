@@ -24,7 +24,7 @@ logs
 # release
 /tmp/
 /temp/
-# dist/
+dist/
 build/
 sitemap-ignore.json
 
