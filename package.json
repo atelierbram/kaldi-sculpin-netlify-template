@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "sculpin generate --env=prod",
     "dev": "vendor/bin/sculpin generate --watch --server",
-    "build": "vendor/bin/sculpin generate --env=prod"
+    "build": "vendor/sculpin/sculpin/bin/sculpin generate --env=prod"
   },
   "repository": {
     "type": "git",
