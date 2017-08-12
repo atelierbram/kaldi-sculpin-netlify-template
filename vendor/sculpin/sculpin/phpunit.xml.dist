@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+    backupStaticAttributes="false"
+    colors="true"
+    convertErrorsToExceptions="false"
+    convertNoticesToExceptions="false"
+    convertWarningsToExceptions="false"
+    processIsolation="false"
+    stopOnFailure="false"
+    stopOnError="false"
+    stopOnIncomplete="false"
+    stopOnSkipped="false"
+    syntaxCheck="false"
+    bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="Sculpin Test Suite">
+            <directory>./src/Sculpin/Bundle/*/Tests</directory>
+            <directory>./src/Sculpin/Core/Tests</directory>
+            <directory>./src/Sculpin/Contrib/*/Tests</directory>
+            <directory>./src/Sculpin/Tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory>./src/Sculpin/</directory>
+            <exclude>
+                <directory>./src/Sculpin/Bundle/*/Tests</directory>
+                <directory>./src/Sculpin/Bundle/*/Resources</directory>
+                <directory>./src/Sculpin/Bundle/*/vendor</directory>
+                <directory>./src/Sculpin/Core/Tests</directory>
+                <directory>./src/Sculpin/Core/vendor</directory>
+                <directory>./src/Sculpin/Contrib/*/Tests</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>

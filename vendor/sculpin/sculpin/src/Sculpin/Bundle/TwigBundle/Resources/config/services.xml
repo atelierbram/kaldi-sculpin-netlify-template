@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="sculpin_twig.flexible_extension_filesystem_loader.class">Sculpin\Bundle\TwigBundle\FlexibleExtensionFilesystemLoader</parameter>
+        <parameter key="sculpin_twig.array_loader.class">Twig_Loader_Array</parameter>
+        <parameter key="sculpin_twig.loader.class">Twig_Loader_Chain</parameter>
+        <parameter key="sculpin_twig.template_resetter.class">Sculpin\Bundle\TwigBundle\TemplateResetter</parameter>
+        <parameter key="sculpin_twig.twig.class">Twig_Environment</parameter>
+        <parameter key="sculpin_twig.formatter.class">Sculpin\Bundle\TwigBundle\TwigFormatter</parameter>
+        <parameter key="sculpin_twig.extensions.debug.class">Twig_Extension_Debug</parameter>
+        <parameter key="sculpin_twig.extensions.intl.class">Twig_Extensions_Extension_Intl</parameter>
+    </parameters>
+
+    <services>
+
+        <service id="sculpin_twig.flexible_extension_filesystem_loader" class="%sculpin_twig.flexible_extension_filesystem_loader.class%">
+            <argument>%sculpin.source_dir%</argument>
+            <argument>%sculpin_twig.source_view_paths%</argument>
+            <argument>%sculpin_twig.view_paths%</argument>
+            <argument>%sculpin_twig.extensions%</argument>
+            <tag name="kernel.event_subscriber" />
+            <tag name="sculpin.path_configurator" type="exclude" parameter="sculpin_twig.source_view_paths" />
+            <tag name="sculpin.custom_mime_extensions" type="text/twig" parameter="sculpin_twig.extensions" />
+        </service>
+
+        <service id="sculpin_twig.array_loader" class="%sculpin_twig.array_loader.class%">
+            <argument type="collection" />
+        </service>
+
+        <service id="sculpin_twig.loader" class="%sculpin_twig.loader.class%">
+            <argument type="collection">
+                <argument type="service" id="sculpin_twig.array_loader" />
+                <argument type="service" id="sculpin_twig.flexible_extension_filesystem_loader" />
+            </argument>
+        </service>
+
+        <service id="sculpin_twig.twig" class="%sculpin_twig.twig.class%">
+            <argument type="service" id="sculpin_twig.loader" />
+            <argument type="collection">
+                <argument key="debug">%kernel.debug%</argument>
+            </argument>
+        </service>
+
+        <service id="sculpin_twig.formatter" class="%sculpin_twig.formatter.class%">
+            <argument type="service" id="sculpin_twig.twig" />
+            <argument type="service" id="sculpin_twig.array_loader" />
+            <tag name="sculpin.formatter" alias="twig" />
+        </service>
+
+        <service id="sculpin_twig.template_resetter" class="%sculpin_twig.template_resetter.class%">
+            <argument type="service" id="sculpin_twig.twig" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+
+        <service id="sculpin_twig.extensions.debug" class="%sculpin_twig.extensions.debug.class%">
+            <tag name="twig.extension" />
+        </service>
+
+        <service id="sculpin_twig.extensions.intl" class="%sculpin_twig.extensions.intl.class%">
+            <tag name="twig.extension" />
+        </service>
+
+    </services>
+
+</container>

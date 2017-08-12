@@ -21,7 +21,7 @@ logs
 #sass cache files
 .sass-cache
 
-release
+# release
 /tmp/
 /temp/
 # dist/
@@ -31,11 +31,10 @@ sitemap-ignore.json
 # Docs, etc in underscore directory
 _/
 publish.sh
-s3-publish.sh
-s3.conf.dist
+vendor/sculpin/sculpin-origineel
 
 # ignore page folder for pagination for now
-/docs/page/
+/dist/page/
 
 # copied assets for local development
 /assets
@@ -46,5 +45,5 @@ s3.conf.dist
 # /app/config/sculpin_site_*.yml
 /app/logs/*
 # /vendor/
-/source/components/
-/output_*
+# /source/components/
+# /output_*

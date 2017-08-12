@@ -1,0 +1,79 @@
+{
+    "name": "sculpin/sculpin",
+    "description": "Static Site Generator",
+    "homepage": "https://sculpin.io",
+    "keywords": ["static", "site", "generator"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dragonfly Development Inc.",
+            "email": "info@dflydev.com",
+            "homepage": "http://dflydev.com"
+        },
+        {
+            "name": "Beau Simensen",
+            "email": "beau@dflydev.com",
+            "homepage": "http://beausimensen.com"
+        }
+    ],
+    "require": {
+        "php": "^5.4|^7.0",
+        "dflydev/ant-path-matcher": "1.*",
+        "dflydev/apache-mime-types": "~1.0,>=1.0.1",
+        "dflydev/canal": "1.*",
+        "webignition/internet-media-type": "^0.4",
+        "dflydev/dot-access-configuration": "^1.0.1",
+        "dflydev/symfony-finder-factory": "1.*",
+        "doctrine/inflector": "1.0.*",
+        "michelf/php-markdown": "^1.7.0",
+        "netcarver/textile": "3.5.*",
+        "react/http": "0.4.*",
+        "sculpin/sculpin-theme-composer-plugin": "^1.0",
+        "symfony/config": "~2.3",
+        "symfony/console": "~2.3",
+        "symfony/dependency-injection": "~2.3",
+        "symfony/event-dispatcher": "~2.3",
+        "symfony/filesystem": "~2.3",
+        "symfony/finder": "~2.3",
+        "symfony/http-kernel": "~2.3",
+        "symfony/process": "~2.3",
+        "symfony/yaml": "~2.3",
+        "twig/twig": "~1.11",
+        "twig/extensions": "~1.0",
+        "dflydev/embedded-composer": "^1.0@dev",
+        "seld/jsonlint": "^1.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "symfony/dom-crawler": "~2.6",
+        "symfony/css-selector": "~2.6",
+        "squizlabs/php_codesniffer": "^2.8"
+    },
+    "replace": {
+        "sculpin/core": "self.version",
+        "sculpin/markdown-bundle": "self.version",
+        "sculpin/markdown-twig-compat-bundle": "self.version",
+        "sculpin/posts-bundle": "self.version",
+        "sculpin/proxy-source-collection-contrib": "self.version",
+        "sculpin/sculpin-bundle": "self.version",
+        "sculpin/standalone-bundle": "self.version",
+        "sculpin/taxonomy-contrib": "self.version",
+        "sculpin/textile-bundle": "self.version",
+        "sculpin/twig-bundle": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sculpin\\": "src/Sculpin/"
+        }
+    },
+    "bin": ["bin/sculpin", "bin/sculpin.php"],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.1.x-dev",
+            "dev-develop": "3.0.x-dev"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "Dflydev\\EmbeddedComposer\\Core\\Script::postAutoloadDump"
+    }
+}
