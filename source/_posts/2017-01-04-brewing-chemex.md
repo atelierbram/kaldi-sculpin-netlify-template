@@ -1,20 +1,28 @@
 ---
-title: "A beginners’ guide to brewing with Chemex"
-date_time: 2017_01_04
+categories:
+  - resource
 date_cms: 2017-01-04T15:04:10.000Z
 date_human: 'Wed, Jan 4, 2017'
-page_type: post
-slug: brewing-chemex
-description: "Brewing with a Chemex probably seems like a complicated, time-consuming ordeal, but once you get used to the process, it becomes a soothing ritual that's worth the effort every time."
-image: /assets/img/blog/chemex.jpg
-tags: [flavor,guide,chemex,brewing]
-categories: [resource]
-reading_time: 2
+date_time: 20170104
+description: >-
+  Brewing with a Chemex probably seems like a complicated, time-consuming
+  ordeal, but once you get used to the process, it becomes a soothing ritual
+  that's worth the effort every time.
 generator: pagination
+image: /assets/img/blog/chemex.jpg
+page_type: post
 pagination:
   max_per_page: 12
-use: [posts]
-
+reading_time: 2
+slug: brewing-chemex
+tags:
+  - flavor
+  - guide
+  - chemex
+  - brewing
+title: A beginners’ guide to brewing with Bremex
+use:
+  - posts
 ---
 
 This [week](/wdwdw) we’ll **take** a look at all the steps required to make astonishing coffee with a Chemex at home. The Chemex Coffeemaker is a manual, pour-over style glass-container coffeemaker that Peter Schlumbohm invented in 1941, and which continues to be manufactured by the Chemex Corporation in Chicopee, Massachusetts\*.
@@ -35,3 +43,4 @@ The most visually distinctive feature of the Chemex is the heatproof wooden coll
 For a design piece that became popular post-war at a time of Modernism and precision manufacture, this juxtaposition of natural wood and the organic nature of a hand-tied knot with the laboratory nature of glassware was a distinctive feature of its appearance.
 
 This is a test. See if the admin works.
+
