@@ -217,7 +217,7 @@ The layouts for the pages and posts inherit from the default `layouts/default.ht
 
 Take note of the differences in syntax between an include `{% include "image_grid" %}` and outputting a variable from the meta-data defined in the Yaml front matter at the top of your page or post `{{ page.main.heading }}`.
 
-```markup
+```twig
 {% include "image_grid.twig" %}
 
 <h3 class="f3 b lh-title mb2">{{ page.main.heading }}</h3>
@@ -225,7 +225,7 @@ Take note of the differences in syntax between an include `{% include "image_gri
 
 We can have things like if statements and for loops as well with Sculpin and Twig:
 
-```markup
+```twig
 {% if page.tags %}
   <p class="tags"><span class="primary">Tags:</span>
   <ul class="mb1 inline-flex">
@@ -243,7 +243,7 @@ The template uses a custom implementation of [Tachyons](http://tachyons.io/) for
 
 All SVG icons stored in `src/assets/img/icons` are automatically optimized with grunt-svgstore and concatenated into a single SVG sprite stored as an include called `svgstore.twig` in `source/_includes`. Make sure you use consistent icons in terms of viewport and art direction for optimal results. Refer to an SVG via the `<use>` tag like so:
 
-```
+```html
 <svg width="16px" height="16px" class="db">
   <use xlink:href="#SVG-ID"></use>
 </svg>
@@ -254,6 +254,7 @@ All SVG icons stored in `src/assets/img/icons` are automatically optimized with 
 In the original [Blog Skeleton](https://github.com/sculpin/sculpin-blog-skeleton) for Sculpin two modules in the subdirectory are installed as submodules:
  - `vendor/sculpin/sculpin`
  - `vendor/dflydev/embedded-composer`
+
 This did throw errors on the initial deploy process, so I had to change this, remove the `.git` and remove it from cache, re `git add` those folders in order for them to show up in the git repo, and thus for the deploy process to succeed.
 
 ### RESOURCES
