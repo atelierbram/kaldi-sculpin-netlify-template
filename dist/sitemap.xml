@@ -7,19 +7,19 @@
     <priority>0.8</priority>
   </url>
     <url>
-    <loc>//kaldi-sculpin-template.netlify.com/blog/jamaica-blue</loc>
+    <loc>//kaldi-sculpin-template.netlify.com/blog/jamaica-blue/</loc>
     <lastmod>2017-02-03T00:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>//kaldi-sculpin-template.netlify.com/blog/brewing-chemex</loc>
+    <loc>//kaldi-sculpin-template.netlify.com/blog/brewing-chemex/</loc>
     <lastmod>2017-01-04T00:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
-    <loc>//kaldi-sculpin-template.netlify.com/blog/making-sense</loc>
+    <loc>//kaldi-sculpin-template.netlify.com/blog/making-sense/</loc>
     <lastmod>2016-12-17T00:00:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>

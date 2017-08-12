@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "sculpin generate --env=prod",
     "dev": "vendor/bin/sculpin generate --watch --server",
-    "build": "grunt build"
+    "build": "vendor/bin/sculpin generate --env=prod"
   },
   "repository": {
     "type": "git",
