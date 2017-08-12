@@ -1,0 +1,37 @@
+{
+    "name": "dflydev/embedded-composer-bundle",
+    "description": "Embed Composer as a Symfony Bundle",
+    "type": "symfony-bundle",
+    "keywords": ["embedded", "composer", "extensibility", "bundle"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dragonfly Development Inc.",
+            "email": "info@dflydev.com",
+            "homepage": "http://dflydev.com"
+        },
+        {
+            "name": "Beau Simensen",
+            "email": "beau@dflydev.com",
+            "homepage": "http://beausimensen.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "dflydev/embedded-composer-console": "1.*@dev",
+        "dflydev/embedded-composer-core": "1.*@dev",
+        "symfony/http-kernel": "~2.1",
+
+        "composer/composer": "@dev",
+        "symfony/console": "~2.3@dev"
+    },
+    "autoload": {
+        "psr-0": { "Dflydev\\EmbeddedComposer\\Bundle": "" }
+    },
+    "target-dir": "Dflydev/EmbeddedComposer/Bundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
