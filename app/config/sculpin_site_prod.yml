@@ -1,0 +1,5 @@
+imports:
+  - sculpin_site.yml
+url: //kaldi-sculpin-template.netlify.com
+slug: //kaldi-sculpin-template.netlify.com
+slug_posts: //kaldi-sculpin-template.netlify.com/blog
