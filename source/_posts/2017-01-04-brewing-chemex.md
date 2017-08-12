@@ -1,6 +1,6 @@
 ---
 title: "A beginners’ guide to brewing with Chemex"
-date: 2017_01_04
+date_time: 2017_01_04
 date_cms: 2017-01-04T15:04:10.000Z
 date_human: 'Wed, Jan 4, 2017'
 page_type: post

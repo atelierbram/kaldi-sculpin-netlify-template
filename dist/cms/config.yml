@@ -14,6 +14,8 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date_cms", widget: "datetime"}
+      - {label: "Date Time", name: "date_time", widget: "datetime"}
+      - {label: "Entry Date", name: "date_human", widget: "datetime"}
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}

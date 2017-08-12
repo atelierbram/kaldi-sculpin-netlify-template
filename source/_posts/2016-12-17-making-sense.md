@@ -1,6 +1,6 @@
 ---
 title: "Making sense of the SCAA’s new Flavor Wheel"
-date: 2016_12_17
+date_time: 2016_12_17
 date_human: Sat, Dec 17, 2016
 date_cms: 2016-12-17T15:04:10.000Z
 page_type: post

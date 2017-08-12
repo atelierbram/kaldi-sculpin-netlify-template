@@ -1,6 +1,6 @@
 ---
 title: "Just in: small batch of Jamaica Blue Mountain in store next week"
-date: 2017_01_03
+date_time: 2017_01_03
 date_human: "Tue, Jan 3, 2017"
 date_cms: 2017-01-03T15:04:10.000Z
 page_type: post
