@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>//kaldi-sculpin-template.netlify.com</loc>
-    <lastmod>2017-08-10</lastmod>
+    <lastmod>2017-08-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
     <url>
     <loc>//kaldi-sculpin-template.netlify.com/blog/jamaica-blue</loc>
-    <lastmod>2017-08-10T17:09:33+02:00</lastmod>
+    <lastmod>2017-08-12T11:13:03+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
     <loc>//kaldi-sculpin-template.netlify.com/blog/brewing-chemex</loc>
-    <lastmod>2017-08-10T17:09:33+02:00</lastmod>
+    <lastmod>2017-08-12T11:13:03+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
     <url>
     <loc>//kaldi-sculpin-template.netlify.com/blog/making-sense</loc>
-    <lastmod>2017-08-10T17:09:33+02:00</lastmod>
+    <lastmod>2017-08-12T11:13:03+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
