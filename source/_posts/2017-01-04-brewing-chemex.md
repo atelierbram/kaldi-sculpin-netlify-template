@@ -20,7 +20,7 @@ tags:
   - guide
   - chemex
   - brewing
-title: A beginners’ guide to brewing with Bremex
+title: A beginners’ guide to brewing with Chemex
 use:
   - posts
 ---
@@ -43,4 +43,5 @@ The most visually distinctive feature of the Chemex is the heatproof wooden coll
 For a design piece that became popular post-war at a time of Modernism and precision manufacture, this juxtaposition of natural wood and the organic nature of a hand-tied knot with the laboratory nature of glassware was a distinctive feature of its appearance.
 
 This is a test. See if the admin works.
+
 
