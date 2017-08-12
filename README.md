@@ -2,6 +2,8 @@
 
 This is a small business template built with [Sculpin](https://sculpin.io/) and [Netlify CMS](https://github.com/netlify/netlify-cms), it was adapted by [Bram de Haan](http://atelierbramdehaan.nl/) from [a design](https://github.com/netlify-templates/kaldi-hugo-cms-template) by [Darin Dimitroff](http://www.darindimitroff.com/), [spacefarm.digital](https://www.spacefarm.digital) and the [Blog Skeleton](https://github.com/sculpin/sculpin-blog-skeleton) for Sculpin.
 
+Go see [the deployed website on Netlify](http://kaldi-sculpin-template.netlify.com/).
+
 ## Getting started
 
 ### Creating your Git Repo
