@@ -1,0 +1,1 @@
+!function(){var e=document.querySelector('link[rev="help"][href]:not([href=""])');if(e&&e.href){var r=document.createElement("a");r.rev=e.rev,r.href=e.href,r.target="_blank",r.innerHTML="Backlink <span>to the repo for this template</span>",document.body.appendChild(r)}}();

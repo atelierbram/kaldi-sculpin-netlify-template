@@ -15,7 +15,8 @@ module.exports = function(grunt) {
         },
         dist: {
           files: {
-            'build/css/unprefixed/style-unprefixed.css': 'src/assets/sass/main.scss'
+            'build/css/unprefixed/style-unprefixed.css': 'src/assets/sass/main.scss',
+            'build/css/unprefixed/backlink-unprefixed.css': 'src/assets/sass/backlink.scss'
           }
         }
       },
@@ -36,6 +37,7 @@ module.exports = function(grunt) {
           flatten: true,
           files: {
             'build/css/prefixed/style-prefixed.css': 'build/css/unprefixed/style-unprefixed.css',
+            'build/css/prefixed/backlink-prefixed.css': 'build/css/unprefixed/backlink-unprefixed.css',
 
           }
         }
@@ -46,6 +48,7 @@ module.exports = function(grunt) {
         dist: {
           files: {
             'source/assets/css/main.css': 'build/css/prefixed/style-prefixed.css',
+            'source/assets/css/backlink.css': 'build/css/prefixed/backlink-prefixed.css',
 
           }
         }
@@ -56,6 +59,8 @@ module.exports = function(grunt) {
           files: {
             'source/_includes/detect-webfont.js.inc': 'build/js/detect-webfont.min.js',
             'source/_includes/responsive-nav.js.inc': 'build/js/responsive-nav.min.js',
+            'source/_includes/backlink.js.inc': 'build/js/backlink.min.js',
+            'source/_includes/backlink.css.inc': 'source/assets/css/backlink.css'
           },
           flatten: true,
           filter: 'isFile',
@@ -83,6 +88,7 @@ module.exports = function(grunt) {
           files: {
             'build/js/detect-webfont.min.js': 'build/js/detect-webfont.js',
             'build/js/responsive-nav.min.js': 'src/assets/js/responsive-nav.js',
+            'build/js/backlink.min.js': 'src/assets/js/backlink.js',
           }
         }
       },

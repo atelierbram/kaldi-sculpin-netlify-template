@@ -1,0 +1,35 @@
+// http://bittersmann.de/lib/backlink/backlink.css
+a[rev="help"] {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: .94em 2.14em .85em 1.8em;
+  color: hsl(0, 0%, 85%);
+  font-family: inherit;
+  font-size: .75rem;
+  line-height: .75;
+  text-decoration: none;
+  letter-spacing: .075rem;
+  word-spacing: -.075rem;
+  text-shadow: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12px' height='12px' viewBox='0 0 24 24'%3E%3Crect fill='rgb(217,217,217)' width='4' height='24'/%3E%3Cpolygon fill='rgb(217,217,217)' points='24,24 6,12 24,0'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200px' height='36px' viewBox='0 0 1200 36'%3E%3Cpolygon fill='rgb(18,18,18)' points='1199,34 1197,36 0,36 0,0 1197,0 1198,1 1182,17'/%3E%3C/svg%3E");
+  background-position: .5em center, right center;
+  background-repeat: no-repeat;
+}
+
+a[rev="help"] span {
+  position: absolute;
+  white-space: nowrap;
+  background: hsl(0,0%,7%);
+  padding: .7em 1.14em .75em;
+  top: .15em; left: 100%;
+  transform-origin: left;
+  transform: rotateY(90deg);
+  transition: transform 0.1s ease-in-out;
+}
+
+a[rev="help"]:focus span,
+a[rev="help"]:hover span {
+  transform: rotateY(0deg);
+}
