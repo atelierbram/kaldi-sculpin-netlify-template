@@ -11,6 +11,7 @@ module.exports = function(grunt) {
 
       sass: {
         options: {
+          implementation: require('node-sass'),
           sourceMap: true
         },
         dist: {
@@ -29,6 +30,7 @@ module.exports = function(grunt) {
           },
           processors: [
             require('autoprefixer')({browsers: 'last 2 versions'}),
+            require('cssnano')(),
           ]
         },
 
@@ -36,19 +38,9 @@ module.exports = function(grunt) {
           expand: true,
           flatten: true,
           files: {
-            'build/css/prefixed/style-prefixed.css': 'build/css/unprefixed/style-unprefixed.css',
-            'build/css/prefixed/backlink-prefixed.css': 'build/css/unprefixed/backlink-unprefixed.css',
-
-          }
-        }
-      },
-
-      // note the difference between `source` and `src`, the latter `src` folder and the `build` folder are not copied over to `dist`
-      cssmin: {
-        dist: {
-          files: {
-            'source/assets/css/main.css': 'build/css/prefixed/style-prefixed.css',
-            'source/assets/css/backlink.css': 'build/css/prefixed/backlink-prefixed.css',
+            // note the difference between `source` and `src`, the latter `src` folder and the `build` folder are not copied over to `dist`
+            'source/assets/css/main.css': 'build/css/unprefixed/style-unprefixed.css',
+            'source/assets/css/backlink.css': 'build/css/unprefixed/backlink-unprefixed.css',
 
           }
         }
@@ -69,12 +61,12 @@ module.exports = function(grunt) {
 
 
       concat: {
-         dist: {
-           files: {
-             'build/js/detect-webfont.js':  ['src/assets/js/feature-detect.js','src/assets/js/webfontloader.js'],
-           }
-         }
-       },
+        dist: {
+          files: {
+            'build/js/detect-webfont.js':  ['src/assets/js/feature-detect.js','src/assets/js/webfontloader.js'],
+          }
+        }
+      },
 
       uglify: {
         options: {
@@ -114,19 +106,19 @@ module.exports = function(grunt) {
         },
 
         scss: {
-            files: ['src/assets/sass/**/*.scss'],
-            tasks: ['scss','postcss','cssmin','copy'],
-            options: {
-              // spawn: false
-            }
+          files: ['src/assets/sass/**/*.scss'],
+          tasks: ['scss','postcss','copy'],
+          options: {
+            // spawn: false
+          }
         },
 
         js: {
-            files: ['src/assets/js/**/*.js'],
-            tasks: ['concat','uglify', 'copy'],
-            options: {
-              // spawn: false
-            }
+          files: ['src/assets/js/**/*.js'],
+          tasks: ['concat','uglify', 'copy'],
+          options: {
+            // spawn: false
+          }
         },
 
       },
@@ -162,14 +154,14 @@ module.exports = function(grunt) {
 
     });
 
-  grunt.registerTask('build', ['clean','concat','uglify','sass','postcss:dist','cssmin','copy','svgstore']);
+  grunt.registerTask('build', ['clean','concat','uglify','sass','postcss:dist','copy','svgstore']);
   grunt.registerTask('clean', ['clean']);
-  grunt.registerTask('scss', ['sass', 'postcss:dist', 'cssmin']);
+  grunt.registerTask('scss', ['sass', 'postcss:dist']);
   grunt.registerTask('js', ['uglify', 'concat']);
   grunt.registerTask('default', ['build', 'watch']);
   grunt.registerTask('dev', ['watch']);
 
-  grunt.loadNpmTasks('grunt-sass','grunt-contrib-cssmin','grunt-contrib-concat','grunt-contrib-uglify','grunt-contrib-watch','matchdep','grunt-postcss','grunt-contrib-copy','grunt-contrib-clean','grunt-svgstore','grunt-exec');
+  grunt.loadNpmTasks('grunt-sass','grunt-contrib-concat','grunt-contrib-uglify','grunt-contrib-watch','matchdep','grunt-postcss','grunt-contrib-copy','grunt-contrib-clean','grunt-svgstore','grunt-exec');
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   // Default tasks to be run.
