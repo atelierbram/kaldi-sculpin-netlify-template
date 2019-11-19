@@ -7,7 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
 {
     public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         'ebf8799635f67b5d7248946fe2154f4a' => __DIR__ . '/..' . '/ringcentral/psr7/src/functions_include.php',
         'ce89ac35a6c330c55f4710717db9ff78' => __DIR__ . '/..' . '/kriswallsmith/assetic/src/functions.php',
@@ -18,8 +20,10 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
         array (
             'webignition\\Tests\\StringParser\\' => 31,
             'webignition\\Tests\\QuotedString\\' => 31,
+            'webignition\\Tests\\InternetMediaType\\' => 36,
             'webignition\\StringParser\\' => 25,
             'webignition\\QuotedString\\' => 25,
+            'webignition\\InternetMediaType\\' => 30,
         ),
         'T' => 
         array (
@@ -28,7 +32,10 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Util\\' => 22,
+            'Symfony\\Polyfill\\Php56\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\HttpKernel\\' => 29,
@@ -42,8 +49,6 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
             'Symfony\\Component\\Config\\' => 25,
             'Seld\\PharUtils\\' => 15,
             'Seld\\JsonLint\\' => 14,
-            'Seld\\CliPrompt\\' => 15,
-            'Sculpin\\' => 8,
         ),
         'R' => 
         array (
@@ -59,12 +64,21 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
         ),
+        'N' => 
+        array (
+            'Netcarver\\Textile\\' => 18,
+        ),
+        'M' => 
+        array (
+            'Michelf\\' => 8,
+        ),
         'J' => 
         array (
             'JsonSchema\\' => 11,
         ),
         'C' => 
         array (
+            'Composer\\XdebugHandler\\' => 23,
             'Composer\\Spdx\\' => 14,
             'Composer\\Semver\\' => 16,
             'Composer\\CaBundle\\' => 18,
@@ -81,6 +95,10 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
         array (
             0 => __DIR__ . '/..' . '/webignition/quoted-string/tests',
         ),
+        'webignition\\Tests\\InternetMediaType\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webignition/internet-media-type/tests',
+        ),
         'webignition\\StringParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/webignition/string-parser/src',
@@ -88,6 +106,10 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
         'webignition\\QuotedString\\' => 
         array (
             0 => __DIR__ . '/..' . '/webignition/quoted-string/src',
+        ),
+        'webignition\\InternetMediaType\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webignition/internet-media-type/src',
         ),
         'Twig\\Extensions\\' => 
         array (
@@ -97,9 +119,21 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
+        'Symfony\\Polyfill\\Util\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-util',
+        ),
+        'Symfony\\Polyfill\\Php56\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php56',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
         'Symfony\\Component\\Yaml\\' => 
         array (
@@ -153,14 +187,6 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
         array (
             0 => __DIR__ . '/..' . '/seld/jsonlint/src/Seld/JsonLint',
         ),
-        'Seld\\CliPrompt\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/seld/cli-prompt/src',
-        ),
-        'Sculpin\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/sculpin/sculpin/src/Sculpin',
-        ),
         'RingCentral\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/ringcentral/psr7/src',
@@ -193,9 +219,21 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
+        'Netcarver\\Textile\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/netcarver/textile/src/Netcarver/Textile',
+        ),
+        'Michelf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/michelf/php-markdown/Michelf',
+        ),
         'JsonSchema\\' => 
         array (
             0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
+        ),
+        'Composer\\XdebugHandler\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/xdebug-handler/src',
         ),
         'Composer\\Spdx\\' => 
         array (
@@ -216,13 +254,6 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
     );
 
     public static $prefixesPsr0 = array (
-        'w' => 
-        array (
-            'webignition\\Tests' => 
-            array (
-                0 => __DIR__ . '/..' . '/webignition/internet-media-type/tests',
-            ),
-        ),
         'd' => 
         array (
             'dflydev\\util\\antPathMatcher' => 
@@ -246,20 +277,6 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
             'Sculpin\\Composer\\SculpinThemePlugin\\' => 
             array (
                 0 => __DIR__ . '/..' . '/sculpin/sculpin-theme-composer-plugin/src',
-            ),
-        ),
-        'N' => 
-        array (
-            'Netcarver\\Textile' => 
-            array (
-                0 => __DIR__ . '/..' . '/netcarver/textile/src',
-            ),
-        ),
-        'M' => 
-        array (
-            'Michelf' => 
-            array (
-                0 => __DIR__ . '/..' . '/michelf/php-markdown',
             ),
         ),
         'E' => 
@@ -314,8 +331,7 @@ class ComposerStaticInit2d090330b7055fd80640fc2d7773cb73
     );
 
     public static $fallbackDirsPsr0 = array (
-        0 => __DIR__ . '/..' . '/webignition/internet-media-type/src',
-        1 => __DIR__ . '/..' . '/webignition/disallowed-character-terminated-string/src',
+        0 => __DIR__ . '/..' . '/webignition/disallowed-character-terminated-string/src',
     );
 
     public static $classMap = array (

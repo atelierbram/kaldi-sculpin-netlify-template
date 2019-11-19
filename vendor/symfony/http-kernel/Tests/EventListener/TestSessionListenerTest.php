@@ -12,11 +12,11 @@
 namespace Symfony\Component\HttpKernel\Tests\EventListener;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\HttpKernelInterface;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
  * SessionListenerTest.
@@ -62,8 +62,7 @@ class TestSessionListenerTest extends TestCase
     {
         $this->sessionHasBeenStarted();
 
-        $params = session_get_cookie_params();
-        session_set_cookie_params(0, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+        @ini_set('session.cookie_lifetime', 0);
 
         $response = $this->filterResponse(new Request(), HttpKernelInterface::MASTER_REQUEST);
         $cookies = $response->headers->getCookies();

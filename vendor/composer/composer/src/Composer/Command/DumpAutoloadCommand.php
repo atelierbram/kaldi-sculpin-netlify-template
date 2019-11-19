@@ -36,8 +36,11 @@ class DumpAutoloadCommand extends BaseCommand
                 new InputOption('apcu', null, InputOption::VALUE_NONE, 'Use APCu to cache found/not-found classes.'),
                 new InputOption('no-dev', null, InputOption::VALUE_NONE, 'Disables autoload-dev rules.'),
             ))
-            ->setHelp(<<<EOT
+            ->setHelp(
+                <<<EOT
 <info>php composer.phar dump-autoload</info>
+
+Read more at https://getcomposer.org/doc/03-cli.md#dump-autoload-dumpautoload-
 EOT
             )
         ;
@@ -59,10 +62,12 @@ EOT
         $authoritative = $input->getOption('classmap-authoritative') || $config->get('classmap-authoritative');
         $apcu = $input->getOption('apcu') || $config->get('apcu-autoloader');
 
-        if ($optimize || $authoritative) {
-            $this->getIO()->writeError('<info>Generating optimized autoload files</info>');
+        if ($authoritative) {
+            $this->getIO()->writeError('<info>Generating optimized autoload files (authoritative)</info>', false);
+        } elseif ($optimize) {
+            $this->getIO()->writeError('<info>Generating optimized autoload files</info>', false);
         } else {
-            $this->getIO()->writeError('<info>Generating autoload files</info>');
+            $this->getIO()->writeError('<info>Generating autoload files</info>', false);
         }
 
         $generator = $composer->getAutoloadGenerator();
@@ -70,6 +75,16 @@ EOT
         $generator->setClassMapAuthoritative($authoritative);
         $generator->setApcu($apcu);
         $generator->setRunScripts(!$input->getOption('no-scripts'));
-        $generator->dump($config, $localRepo, $package, $installationManager, 'composer', $optimize);
+        $numberOfClasses = $generator->dump($config, $localRepo, $package, $installationManager, 'composer', $optimize);
+
+        if ($authoritative) {
+            $this->getIO()->overwriteError('<info>Generated optimized autoload files (authoritative) containing '. $numberOfClasses .' classes</info>');
+        } elseif ($optimize) {
+            $this->getIO()->overwriteError('<info>Generated optimized autoload files containing '. $numberOfClasses .' classes</info>');
+        } else {
+            $this->getIO()->overwriteError('<info>Generated autoload files containing '. $numberOfClasses .' classes</info>');
+        }
+
+        return 0;
     }
 }

@@ -6,13 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'webignition\\Tests' => array($vendorDir . '/webignition/internet-media-type/tests'),
     'dflydev\\util\\antPathMatcher' => array($vendorDir . '/dflydev/ant-path-matcher/src'),
     'Twig_Extensions_' => array($vendorDir . '/twig/extensions/lib'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Sculpin\\Composer\\SculpinThemePlugin\\' => array($vendorDir . '/sculpin/sculpin-theme-composer-plugin/src'),
-    'Netcarver\\Textile' => array($vendorDir . '/netcarver/textile/src'),
-    'Michelf' => array($vendorDir . '/michelf/php-markdown'),
     'Evenement' => array($vendorDir . '/evenement/evenement/src'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     'Dflydev\\Symfony\\FinderFactory' => array($vendorDir . '/dflydev/symfony-finder-factory/src'),
@@ -23,5 +20,5 @@ return array(
     'Dflydev\\Canal' => array($vendorDir . '/dflydev/canal/src'),
     'Dflydev\\ApacheMimeTypes' => array($vendorDir . '/dflydev/apache-mime-types/src'),
     'Assetic' => array($vendorDir . '/kriswallsmith/assetic/src'),
-    '' => array($vendorDir . '/webignition/internet-media-type/src', $vendorDir . '/webignition/disallowed-character-terminated-string/src'),
+    '' => array($vendorDir . '/webignition/disallowed-character-terminated-string/src'),
 );

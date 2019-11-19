@@ -21,8 +21,6 @@ class UriSigner
     private $secret;
 
     /**
-     * Constructor.
-     *
      * @param string $secret A secret
      */
     public function __construct($secret)
@@ -57,10 +55,6 @@ class UriSigner
     /**
      * Checks that a URI contains the correct hash.
      *
-     * The _hash query string parameter must be the last one
-     * (as it is generated that way by the sign() method, it should
-     * never be a problem).
-     *
      * @param string $uri A signed URI
      *
      * @return bool True if the URI is signed correctly, false otherwise
@@ -81,7 +75,7 @@ class UriSigner
         $hash = urlencode($params['_hash']);
         unset($params['_hash']);
 
-        return $this->computeHash($this->buildUrl($url, $params)) === $hash;
+        return hash_equals($this->computeHash($this->buildUrl($url, $params)), $hash);
     }
 
     private function computeHash($uri)

@@ -164,6 +164,16 @@ class Factory
             'data-dir' => self::getDataDir($home),
         )));
 
+        // load global config
+        $file = new JsonFile($config->get('home').'/config.json');
+        if ($file->exists()) {
+            if ($io && $io->isDebug()) {
+                $io->writeError('Loading config file ' . $file->getPath());
+            }
+            $config->merge($file->read());
+        }
+        $config->setConfigSource(new JsonConfigSource($file));
+
         $htaccessProtect = (bool) $config->get('htaccess-protect');
         if ($htaccessProtect) {
             // Protect directory against web access. Since HOME could be
@@ -180,16 +190,6 @@ class Factory
             }
         }
 
-        // load global config
-        $file = new JsonFile($config->get('home').'/config.json');
-        if ($file->exists()) {
-            if ($io && $io->isDebug()) {
-                $io->writeError('Loading config file ' . $file->getPath());
-            }
-            $config->merge($file->read());
-        }
-        $config->setConfigSource(new JsonConfigSource($file));
-
         // load global auth file
         $file = new JsonFile($config->get('home').'/auth.json');
         if ($file->exists()) {
@@ -204,7 +204,7 @@ class Factory
         if ($composerAuthEnv = getenv('COMPOSER_AUTH')) {
             $authData = json_decode($composerAuthEnv, true);
 
-            if (is_null($authData)) {
+            if (null === $authData) {
                 throw new \UnexpectedValueException('COMPOSER_AUTH environment variable is malformed, should be a valid JSON object');
             }
 
@@ -238,7 +238,7 @@ class Factory
     public static function createOutput()
     {
         $styles = self::createAdditionalStyles();
-        $formatter = new OutputFormatter(null, $styles);
+        $formatter = new OutputFormatter(false, $styles);
 
         return new ConsoleOutput(ConsoleOutput::VERBOSITY_NORMAL, null, $formatter);
     }
@@ -347,7 +347,7 @@ class Factory
         // load package
         $parser = new VersionParser;
         $guesser = new VersionGuesser($config, new ProcessExecutor($io), $parser);
-        $loader = new Package\Loader\RootPackageLoader($rm, $config, $parser, $guesser);
+        $loader = new Package\Loader\RootPackageLoader($rm, $config, $parser, $guesser, $io);
         $package = $loader->load($localConfig, 'Composer\Package\RootPackage', $cwd);
         $composer->setPackage($package);
 
@@ -437,7 +437,7 @@ class Factory
     {
         $composer = null;
         try {
-            $composer = self::createComposer($io, $config->get('home') . '/composer.json', $disablePlugins, $config->get('home'), $fullLoad);
+            $composer = $this->createComposer($io, $config->get('home') . '/composer.json', $disablePlugins, $config->get('home'), $fullLoad);
         } catch (\Exception $e) {
             $io->writeError('Failed to initialize global composer: '.$e->getMessage(), true, IOInterface::DEBUG);
         }
@@ -588,7 +588,7 @@ class Factory
         $disableTls = false;
         if ($config && $config->get('disable-tls') === true) {
             if (!$warned) {
-                $io->write('<warning>You are running Composer with SSL/TLS protection disabled.</warning>');
+                $io->writeError('<warning>You are running Composer with SSL/TLS protection disabled.</warning>');
             }
             $warned = true;
             $disableTls = true;

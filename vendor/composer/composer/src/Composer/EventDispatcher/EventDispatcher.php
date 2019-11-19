@@ -166,13 +166,22 @@ class EventDispatcher
 
         $return = 0;
         foreach ($listeners as $callable) {
-            if (!is_string($callable) && is_callable($callable)) {
+            if (!is_string($callable)) {
+                if (!is_callable($callable)) {
+                    $className = is_object($callable[0]) ? get_class($callable[0]) : $callable[0];
+
+                    throw new \RuntimeException('Subscriber '.$className.'::'.$callable[1].' for event '.$event->getName().' is not callable, make sure the function is defined and public');
+                }
                 $event = $this->checkListenerExpectedEvent($callable, $event);
                 $return = false === call_user_func($callable, $event) ? 1 : 0;
             } elseif ($this->isComposerScript($callable)) {
                 $this->io->writeError(sprintf('> %s: %s', $event->getName(), $callable), true, IOInterface::VERBOSE);
-                $scriptName = substr($callable, 1);
-                $args = $event->getArguments();
+
+                $script = explode(' ', substr($callable, 1));
+                $scriptName = $script[0];
+                unset($script[0]);
+
+                $args = array_merge($script, $event->getArguments());
                 $flags = $event->getFlags();
                 if (substr($callable, 0, 10) === '@composer ') {
                     $exec = $this->getPhpExecCommand() . ' ' . ProcessExecutor::escape(getenv('COMPOSER_BINARY')) . substr($callable, 9);
@@ -186,7 +195,14 @@ class EventDispatcher
                         $this->io->writeError(sprintf('<warning>You made a reference to a non-existent script %s</warning>', $callable), true, IOInterface::QUIET);
                     }
 
-                    $return = $this->dispatch($scriptName, new Script\Event($scriptName, $event->getComposer(), $event->getIO(), $event->isDevMode(), $args, $flags));
+                    try {
+                        $scriptEvent = new Script\Event($scriptName, $event->getComposer(), $event->getIO(), $event->isDevMode(), $args, $flags);
+                        $scriptEvent->setOriginatingEvent($event);
+                        $return = $this->dispatch($scriptName, $scriptEvent);
+                    } catch (ScriptExecutionException $e) {
+                        $this->io->writeError(sprintf('<error>Script %s was called via %s</error>', $callable, $event->getName()), true, IOInterface::QUIET);
+                        throw $e;
+                    }
                 }
             } elseif ($this->isPhpScript($callable)) {
                 $className = substr($callable, 0, strpos($callable, '::'));
@@ -230,6 +246,12 @@ class EventDispatcher
 
                 if (substr($exec, 0, 5) === '@php ') {
                     $exec = $this->getPhpExecCommand() . ' ' . substr($exec, 5);
+                } else {
+                    $finder = new PhpExecutableFinder();
+                    $phpPath = $finder->find(false);
+                    if ($phpPath) {
+                        putenv('PHP_BINARY=' . $phpPath);
+                    }
                 }
 
                 if (0 !== ($exitCode = $this->process->execute($exec))) {
@@ -252,16 +274,17 @@ class EventDispatcher
     protected function getPhpExecCommand()
     {
         $finder = new PhpExecutableFinder();
-        $phpPath = $finder->find();
+        $phpPath = $finder->find(false);
         if (!$phpPath) {
-            throw new \RuntimeException('Failed to locate PHP binary to execute '.$scriptName);
+            throw new \RuntimeException('Failed to locate PHP binary to execute '.$phpPath);
         }
-
+        $phpArgs = $finder->findArguments();
+        $phpArgs = $phpArgs ? ' ' . implode(' ', $phpArgs) : '';
         $allowUrlFOpenFlag = ' -d allow_url_fopen=' . ProcessExecutor::escape(ini_get('allow_url_fopen'));
         $disableFunctionsFlag = ' -d disable_functions=' . ProcessExecutor::escape(ini_get('disable_functions'));
         $memoryLimitFlag = ' -d memory_limit=' . ProcessExecutor::escape(ini_get('memory_limit'));
 
-        return ProcessExecutor::escape($phpPath) . $allowUrlFOpenFlag . $disableFunctionsFlag . $memoryLimitFlag;
+        return ProcessExecutor::escape($phpPath) . $phpArgs . $allowUrlFOpenFlag . $disableFunctionsFlag . $memoryLimitFlag;
     }
 
     /**
@@ -315,22 +338,37 @@ class EventDispatcher
         if (!$event instanceof $expected && $expected === 'Composer\Script\CommandEvent') {
             trigger_error('The callback '.$this->serializeCallback($target).' declared at '.$reflected->getDeclaringFunction()->getFileName().' accepts a '.$expected.' but '.$event->getName().' events use a '.get_class($event).' instance. Please adjust your type hint accordingly, see https://getcomposer.org/doc/articles/scripts.md#event-classes', E_USER_DEPRECATED);
             $event = new \Composer\Script\CommandEvent(
-                $event->getName(), $event->getComposer(), $event->getIO(), $event->isDevMode(), $event->getArguments()
+                $event->getName(),
+                $event->getComposer(),
+                $event->getIO(),
+                $event->isDevMode(),
+                $event->getArguments()
             );
         }
         if (!$event instanceof $expected && $expected === 'Composer\Script\PackageEvent') {
             trigger_error('The callback '.$this->serializeCallback($target).' declared at '.$reflected->getDeclaringFunction()->getFileName().' accepts a '.$expected.' but '.$event->getName().' events use a '.get_class($event).' instance. Please adjust your type hint accordingly, see https://getcomposer.org/doc/articles/scripts.md#event-classes', E_USER_DEPRECATED);
             $event = new \Composer\Script\PackageEvent(
-                $event->getName(), $event->getComposer(), $event->getIO(), $event->isDevMode(),
-                $event->getPolicy(), $event->getPool(), $event->getInstalledRepo(), $event->getRequest(),
-                $event->getOperations(), $event->getOperation()
+                $event->getName(),
+                $event->getComposer(),
+                $event->getIO(),
+                $event->isDevMode(),
+                $event->getPolicy(),
+                $event->getPool(),
+                $event->getInstalledRepo(),
+                $event->getRequest(),
+                $event->getOperations(),
+                $event->getOperation()
             );
         }
         if (!$event instanceof $expected && $expected === 'Composer\Script\Event') {
             trigger_error('The callback '.$this->serializeCallback($target).' declared at '.$reflected->getDeclaringFunction()->getFileName().' accepts a '.$expected.' but '.$event->getName().' events use a '.get_class($event).' instance. Please adjust your type hint accordingly, see https://getcomposer.org/doc/articles/scripts.md#event-classes', E_USER_DEPRECATED);
             $event = new \Composer\Script\Event(
-                $event->getName(), $event->getComposer(), $event->getIO(), $event->isDevMode(),
-                $event->getArguments(), $event->getFlags()
+                $event->getName(),
+                $event->getComposer(),
+                $event->getIO(),
+                $event->isDevMode(),
+                $event->getArguments(),
+                $event->getFlags()
             );
         }
 
